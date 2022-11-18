@@ -29,7 +29,7 @@ var sqlServerName = 'teddy${location}${uniqueString(resourceGroup().id)}'
 var sqlDatbaseName = 'TeddyBear'
 
 var auditingEnabled = environmentName == 'Production'
-var auditStorageAccountName = take('bearaudit${location}${uniqueString(resourceGroup.id)}', 24)
+var auditStorageAccountName = take('bearaudit${location}${uniqueString(resourceGroup().id)}', 24)
 
 resource sqlServer 'Microsoft.Sql/servers@2022-05-01-preview' = {
   name: sqlServerName
